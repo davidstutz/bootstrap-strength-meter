@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap Strength Meter</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="password-score/js/keyboard.js"></script>
+        <script type="text/javascript" src="password-score/js/score.js"></script>
+        <script type="text/javascript" src="js/bootstrap-strength-meter.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $.when(
+                        $.getJSON('password-score/data/json/en.json'),
+                        $.getJSON('password-score/data/json/de.json'),
+                        $.getJSON('password-score/data/json/cities.json'),
+                        $.getJSON('password-score/data/json/countries-en.json'),
+                        $.getJSON('password-score/data/json/countries-de.json'),
+                        $.getJSON('password-score/data/json/female.json'),
+                        $.getJSON('password-score/data/json/last.json'),
+                        $.getJSON('password-score/data/json/male.json'),
+                        $.getJSON('password-score/data/json/passwords.json')
+                ).then(function(dictEN, dictDE, cities, countriesEN, countriesDE, female, last, male, passwords) {
+                    var dictionaries = [
+                        dictEN[0],
+                        dictDE[0],
+                        last[0],
+                        male[0],
+                        female[0],
+                        cities[0],
+                        passwords[0],
+                        countriesEN[0],
+                        countriesDE[0]
+                    ];
+                    
+                    var keyboards = [
+                        QWERTY,
+                        QWERTZ
+                    ];
+                    
+                    $('#password').strengthMeter({
+                        container: $('#container'),
+                        dictionaries: dictionaries,
+                        keyboards: keyboards
+                    });
+                    
+                    $('.password').on('click', function() {
+                        $('#password')
+                                .val($(this).data('value'))
+                                .keyup();
+                    })
+                });
+            });
+        </script>
+        <div class="container">
+            <a href="https://github.com/davidstutz/bootstrap-strength-meter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+            <div class="container">
+                <h1>Bootstrap Strength Meter</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="password" style="width:100%;" />
+                </div>
+                <div class="col-md-9">
+                    <div id="container">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="examples">
+                        <p>
+                            <a href="#" class="password" data-value="qwerty">qwerty</a>
+                            <a href="#" class="password" data-value="password">password</a>
+                            <a href="#" class="password" data-value="test1234">test1234</a>
+                            <a href="#" class="password" data-value="admin123">admin123</a>
+                            <a href="#" class="password" data-value="letmein">letmein</a>
+                            <a href="#" class="password" data-value="87654321">87654321</a>
+                            <a href="#" class="password" data-value="87654321">87654321</a>
+                            <a href="#" class="password" data-value="elliotreed">elliotsmith</a>
+                            <a href="#" class="password" data-value="asdfqwer">asdfqwer</a>
+                            <a href="#" class="password" data-value="777777">777777</a>
+                            <a href="#" class="password" data-value="password1">password1</a>
+                            <a href="#" class="password" data-value="liverpool">liverpool</a>
+                            <a href="#" class="password" data-value="qwerty12">qwerty12</a>
+                            <a href="#" class="password" data-value="office">office</a>
+                            <a href="#" class="password" data-value="kristina">kristina</a>
+                            <a href="#" class="password" data-value="qwertyuiop">qwertyuiop</a>
+                            <a href="#" class="password" data-value="Bangladesh">Bangladesh</a>
+                            <a href="#" class="password" data-value="Greenland">Greenland</a>
+                            <a href="#" class="password" data-value="Germany">Germany</a>
+                            <a href="#" class="password" data-value="Berlin">Berlin</a>
+                            <a href="#" class="password" data-value="Hannover">Hannover</a>
+                            <a href="#" class="password" data-value="Cambridge">Cambridge</a>
+                            <a href="#" class="password" data-value="computerscience">computerscience</a>
+                            <a href="#" class="password" data-value="ilovecomputerscience">ilovecomputerscience</a>
+                            <a href="#" class="password" data-value="ichliebeinformatik">ichliebeinformatik</a>
+                            <a href="#" class="password" data-value="qwertyuiop">qwertyuiop</a>
+                            <a href="#" class="password" data-value="Bangladesh">Bangladesh</a>
+                            <a href="#" class="password" data-value="!$Gr33nland123">!$Gr33nland123</a>
+                            <a href="#" class="password" data-value="!G3rm4ny223">!G3rm4ny223</a>
+                            <a href="#" class="password" data-value="B3rl!n">B3rl!n</a>
+                            <a href="#" class="password" data-value="CoMpUtErScIeNcE">CoMpUtErScIeNcE</a>
+                            <a href="#" class="password" data-value="qayxswedcvfr">qayxswedcvfr</a>
+                            <a href="#" class="password" data-value="123698745">123698745</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="introduction">
+                        <p>
+                            <b>Bootstrap Strength Meter</b> is a simple password strength meter based on <a href="https://github.com/davidstutz/password-score">Password Score</a> for strength estimation. Password Score estimates the strength of a passwor din the means of entropy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <p>
+                &copy; 2013
+                <a href="http://davidstutz.de">David Stutz</a> - <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause License</a>
+            </p>
+        </div>
+    </body>
+</html>
