@@ -1,4 +1,4 @@
-# Password Score
+# Bootstrap Strength Meter
 
 Bootstrap Strength Meter is a simple password strength meter based on [Password Score](https://github.com/davidstutz/password-score).
 
