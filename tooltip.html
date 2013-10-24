@@ -11,6 +11,7 @@
         <script type="text/javascript" src="password-score/js/keyboard.js"></script>
         <script type="text/javascript" src="password-score/js/score.js"></script>
         <script type="text/javascript" src="js/bootstrap-strength-meter.js"></script>
+        <script type="text/javascript" src="js/bootstrap-tooltip.js"></script>
         <script type="text/javascript" src="js/prettify.js"></script>
     </head>
     <body>
@@ -46,8 +47,7 @@
                         QWERTZ
                     ];
                     
-                    $('#example').strengthMeter('progressBar', {
-                        container: $('#example-container'),
+                    $('#example').strengthMeter('tooltip', {
                         dictionaries: dictionaries,
                         keyboards: keyboards
                     });
@@ -60,14 +60,11 @@
                 });
             });
         </script>
-        <style type="text/css">
-            #example-container .progress {
-                margin-bottom: 0;
-            }
-        </style>
         <div class="container">
             <a href="https://github.com/davidstutz/bootstrap-strength-meter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-            <h1>Bootstrap Strength Meter</h1>
+            <div class="container">
+                <h1>Bootstrap Strength Meter</h1>
+            </div>
         </div>
         <hr>
         <div class="container">
@@ -78,16 +75,16 @@
         <hr>
         <div class="container">
             <ul class="nav nav-pills">
-                <li class="active"><a href="#">Progress Bar</a></li>
+                <li><a href="index.html">Progress Bar</a></li>
                 <li><a href="text.html">Text</a></li>
-                <li><a href="tooltip.html">Tooltip</a></li>
+                <li class="active"><a href="#">Tooltip</a></li>
             </ul>
         </div>
         <hr>
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <input type="text" class="form-control" id="example" style="width:100%;" />
+                    <input type="text" class="form-control" data-placement="right" id="example" style="width:100%;" />
                 </div>
                 <div class="col-md-9">
                     <div id="example-container">
@@ -130,14 +127,16 @@ $.when(
         QWERTZ
     ];
 
-    // Select the progressBar option.
-    $('#example').strengthMeter('progressBar', {
-        hierarchy: {                                // Hierarchy: If the key is exceeded the corresponding progress bar class will be applied.
-            '0': 'progress-bar-danger',
-            '40': 'progress-bar-warning',
-            '60': 'progress-bar-success'
+    // Select the tooltip option.
+    $('#example').strengthMeter('tooltip', {
+        hierarchy: {                                // Hierarchy: if the key value is exceeded the corresponding text is shown.
+            '0': 'ridiculus',
+            '10': 'very weak',
+            '30': 'weak',
+            '50': 'good',
+            '70': 'string',
+            '100': 'very strong',
         },
-        container: $('#example-container'),         // The container the progress bar is appended to.
         dictionaries: dictionaries,                 // The list of dictionaries to use.
         keyboards: keyboards                        // The list of keyboards to use.
     });

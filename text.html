@@ -46,7 +46,7 @@
                         QWERTZ
                     ];
                     
-                    $('#example').strengthMeter('progressBar', {
+                    $('#example').strengthMeter('text', {
                         container: $('#example-container'),
                         dictionaries: dictionaries,
                         keyboards: keyboards
@@ -61,13 +61,17 @@
             });
         </script>
         <style type="text/css">
-            #example-container .progress {
-                margin-bottom: 0;
+            #example-container {
+                padding: 3px;
+                font-weight: bold;
+                font-size: 16px;
             }
         </style>
         <div class="container">
             <a href="https://github.com/davidstutz/bootstrap-strength-meter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-            <h1>Bootstrap Strength Meter</h1>
+            <div class="container">
+                <h1>Bootstrap Strength Meter</h1>
+            </div>
         </div>
         <hr>
         <div class="container">
@@ -78,8 +82,8 @@
         <hr>
         <div class="container">
             <ul class="nav nav-pills">
-                <li class="active"><a href="#">Progress Bar</a></li>
-                <li><a href="text.html">Text</a></li>
+                <li><a href="index.html">Progress Bar</a></li>
+                <li class="active"><a href="#">Text</a></li>
                 <li><a href="tooltip.html">Tooltip</a></li>
             </ul>
         </div>
@@ -131,13 +135,16 @@ $.when(
     ];
 
     // Select the progressBar option.
-    $('#example').strengthMeter('progressBar', {
-        hierarchy: {                                // Hierarchy: If the key is exceeded the corresponding progress bar class will be applied.
-            '0': 'progress-bar-danger',
-            '40': 'progress-bar-warning',
-            '60': 'progress-bar-success'
+    $('#example').strengthMeter('text', {
+        hierarchy: {                                // Hierarchy: If the key is exceeded the given text class and text will be displayed.
+            '0': ['text-danger', 'ridiculus'],
+            '10': ['text-danger', 'very weak'],
+            '30': ['text-warning', 'weak'],
+            '50': ['text-warning', 'good'],
+            '70': ['text-success', 'string'],
+            '100': ['text-success', 'very strong'],
         },
-        container: $('#example-container'),         // The container the progress bar is appended to.
+        container: $('#example-container'),         // The container the text is appended to.
         dictionaries: dictionaries,                 // The list of dictionaries to use.
         keyboards: keyboards                        // The list of keyboards to use.
     });
