@@ -1,3 +1,0 @@
-[submodule "password-score"]
-	path = password-score
-	url = https://github.com/davidstutz/password-score.git
