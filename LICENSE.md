@@ -1,13 +1,3 @@
-# Bootstrap Strength Meter
-
-Bootstrap Strength Meter is a simple password strength meter based on [Password Score](https://github.com/davidstutz/password-score).
-
-Documentation and demonstration: [http://davidstutz.github.io/bootstrap-strength-meter/](http://davidstutz.github.io/bootstrap-strength-meter/).
-
-
-
-## License
-
 Copyright (c) 2013 - 2014 David Stutz
 All rights reserved.
 
