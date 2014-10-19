@@ -4,7 +4,7 @@ Bootstrap Strength Meter is a simple password strength meter based on [Password 
 
 Documentation and demonstration: [http://davidstutz.github.io/bootstrap-strength-meter/](http://davidstutz.github.io/bootstrap-strength-meter/).
 
-
+![Using a progress bar to visualize password strength.](screenshot.png?raw=true "Using a progress bar to visualize password strength.")
 
 ## License
 
