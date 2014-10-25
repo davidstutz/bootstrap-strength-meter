@@ -6,7 +6,6 @@
   "keywords": [
       "js",
       "css",
-      "less",
       "bootstrap",
       "jquery",
       "password"
@@ -15,6 +14,7 @@
     "./dist/js/bootstrap-strength-meter.js"
   ],
   "dependencies": {
+    "password-score": ">= 1.0.0",
     "jquery": ">= 1.11.0",
     "bootstrap": ">= 2.3.2"
   },
