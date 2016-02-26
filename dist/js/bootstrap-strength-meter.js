@@ -35,7 +35,7 @@
             var template = '<div class="progress"><div class="progress-bar" role="progressbar"></div></div>';
             var progress;
             var progressBar;
-
+            var passcheckTimeout;
             var core = {
 
                 /**
@@ -51,10 +51,21 @@
                     input.on('keyup', core.keyup)
                             .keyup();
                 },
+                queue: function(event){
+                    var password = $(event.target).val();
+                    var value = 0;
+
+                    if (password.length > 0) {
+                        var score = new Score(password);
+                        value = score.calculateEntropyScore(settings.passwordScore.options, settings.passwordScore.append);
+                    }
+
+                    core.update(value);
+                  },
 
                 /**
                  * Update progress bar.
-                 * 
+                 *
                  * @param {string} value
                  */
                 update: function(value) {
@@ -80,25 +91,19 @@
 
                 /**
                  * Event binding on password input.
-                 * 
+                 *
                  * @param {Object} event
                  */
                 keyup: function(event) {
-                    var password = $(event.target).val();
-                    var value = 0;
-
-                    if (password.length > 0) {
-                        var score = new Score(password);
-                        value = score.calculateEntropyScore(settings.passwordScore.options, settings.passwordScore.append);
-                    }
-
-                    core.update(value);
+                    if(passcheckTimeout)clearTimeout(passcheckTimeout);
+                    passcheckTimeout = setTimeout( function(){
+                        core.queue(event);
+                    },500);
                 }
             };
 
             core.init();
         },
-                
         text: function(input, options) {
         
             var defaults = {
@@ -135,7 +140,7 @@
 
                 /**
                  * Update text element.
-                 * 
+                 *
                  * @param {string} value
                  */
                 update: function(value) {
@@ -153,7 +158,7 @@
 
                 /**
                  * Event binding on input element.
-                 * 
+                 *
                  * @param {Object} event
                  */
                 keyup: function(event) {
@@ -212,7 +217,7 @@
 
                 /**
                  * Update tooltip.
-                 * 
+                 *
                  * @param {string} value
                  */
                 update: function(value) {
@@ -228,7 +233,7 @@
 
                 /**
                  * Event binding on input element.
-                 * 
+                 *
                  * @param {Object} event
                  */
                 keyup: function(event) {
