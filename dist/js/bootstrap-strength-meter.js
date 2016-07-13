@@ -104,7 +104,7 @@
             var defaults = {
                 container: input.parent(),
                 hierarchy: {
-                    '0': ['text-danger', 'ridiculus'],
+                    '0': ['text-danger', 'ridiculous'],
                     '10': ['text-danger', 'very weak'],
                     '20': ['text-warning', 'weak'],
                     '30': ['text-warning', 'good'],
@@ -176,11 +176,11 @@
         
             var defaults = {
                 hierarchy: {
-                    '0': 'ridiculus',
+                    '0': 'ridiculous',
                     '10': 'very weak',
                     '20': 'weak',
                     '30': 'good',
-                    '40': 'string',
+                    '40': 'strong',
                     '50': 'very strong'
                 },
                 tooltip: {
