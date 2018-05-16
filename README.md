@@ -6,6 +6,8 @@ Documentation and demonstration: [http://davidstutz.de/bootstrap-strength-meter/
 
 Also check out [Bootstrap Multiselect](https://github.com/davidstutz/bootstrap-multiselect) - a Twitter Bootstrap plugin to provide user friendly selects.
 
+Consider [donating](http://davidstutz.de/donate/) to support development.
+
 ![Using a progress bar to visualize password strength.](screenshot.png?raw=true "Using a progress bar to visualize password strength.")
 
 ## License
