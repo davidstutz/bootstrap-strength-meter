@@ -193,12 +193,12 @@
                                     
 <pre class="prettyprint linenums">
 hierarchy: {
-    '0': ['text-danger', 'ridiculus'],
-    '10': ['text-danger', 'very weak'],
-    '20': ['text-warning', 'weak'],
-    '30': ['text-warning', 'good'],
-    '40': ['text-success', 'strong'],
-    '50': ['text-success', 'very strong']
+    '0': ['text-danger', 'ridiculous'],
+    '25': ['text-danger', 'very weak'],
+    '50': ['text-warning', 'weak'],
+    '75': ['text-warning', 'good'],
+    '100': ['text-success', 'strong'],
+    '125': ['text-success', 'very strong']
 }
 </pre>
                                     <p>
@@ -216,9 +216,9 @@ hierarchy: {
                                                     container: $('#example-text-hierarchy-text'),
                                                     hierarchy: {
                                                         '0': ['text-danger', 'Think about a stronger password!'],
-                                                        '5': ['text-warning', 'Well, you are doing better ...'],
-                                                        '10': ['text-warning', 'Keep going ...'],
-                                                        '15': ['text-success', 'Ok, this will do!']
+                                                        '25': ['text-warning', 'Well, you are doing better ...'],
+                                                        '50': ['text-warning', 'Keep going ...'],
+                                                        '75': ['text-success', 'Ok, this will do!']
                                                     }
                                                 });
                                             });
@@ -243,9 +243,9 @@ hierarchy: {
             container: $('#example-text-hierarchy-text'),
             hierarchy: {
                 '0': ['text-danger', 'Think about a stronger password!'],
-                '5': ['text-warning', 'Well, you are doing better ...'],
-                '10': ['text-warning', 'Keep going ...'],
-                '15': ['text-success', 'Ok, this will do!']
+                '25': ['text-warning', 'Well, you are doing better ...'],
+                '50': ['text-warning', 'Keep going ...'],
+                '75': ['text-success', 'Ok, this will do!']
             }
         });
     });
@@ -325,12 +325,12 @@ hierarchy: {
                                     
 <pre class="prettyprint linenums">
 hierarchy: {
-    '0': 'ridiculus',
-    '10': 'very weak',
-    '20': 'weak',
-    '30': 'good',
-    '40': 'string',
-    '50': 'very strong'
+    '0': 'ridiculous',
+    '25': 'very weak',
+    '50': 'weak',
+    '75': 'good',
+    '100': 'strong',
+    '125': 'very strong'
 }
 </pre>
                                     
@@ -348,9 +348,9 @@ hierarchy: {
                                                 $('#example-tooltip-hierarchy').strengthMeter('tooltip', {
                                                     hierarchy: {
                                                         '0': ['Think about a stronger password!'],
-                                                        '5': ['Well, you are doing better ...'],
-                                                        '10': ['Keep going ...'],
-                                                        '15': ['Ok, this will do!']
+                                                        '25': ['Well, you are doing better ...'],
+                                                        '50': ['Keep going ...'],
+                                                        '75': ['Ok, this will do!']
                                                     },
                                                     tooltip: {
                                                         viewport: '#example-tooltip-hierarchy-viewport'
@@ -373,10 +373,10 @@ hierarchy: {
     $(document).ready(function() {
         $('#example-tooltip-hierarchy').strengthMeter('tooltip', {
             hierarchy: {
-                '0': ['text-danger', 'Think about a stronger password!'],
-                '5': ['text-warning', 'Well, you are doing better ...'],
-                '10': ['text-warning', 'Keep going ...'],
-                '15': ['text-success', 'Ok, this will do!']
+                '0': ['Think about a stronger password!'],
+                '25': ['Well, you are doing better ...'],
+                '50': ['Keep going ...'],
+                '75': ['Ok, this will do!']
             },
             tooltip: {
                 viewport: '#example-tooltip-hierarchy-viewport'
@@ -480,8 +480,8 @@ hierarchy: {
                                     <pre class="prettyprint linenums">
 hierarchy: {
     '0': 'progress-bar-danger',
-    '25': 'progress-bar-warning',
-    '50': 'progress-bar-success'
+    '50': 'progress-bar-warning',
+    '100': 'progress-bar-success'
 }
                                     </pre>
                                     
@@ -500,8 +500,8 @@ hierarchy: {
                                                     container: $('#example-progress-bar-hierarchy-container'),
                                                     hierarchy: {
                                                         '0': 'progress-bar-danger',
-                                                        '10': 'progress-bar-warning',
-                                                        '15': 'progress-bar-success'
+                                                        '25': 'progress-bar-warning',
+                                                        '200': 'progress-bar-success'
                                                     }
                                                 });
                                             });
@@ -529,8 +529,8 @@ hierarchy: {
             container: $('#example-progress-bar-hierarchy-container'),
             hierarchy: {
                 '0': 'progress-bar-danger',
-                '10': 'progress-bar-warning',
-                '15': 'progress-bar-success'
+                '25': 'progress-bar-warning',
+                '200': 'progress-bar-success'
             }
         });
     });
@@ -581,7 +581,7 @@ hierarchy: {
                     
                     <hr>
                     <p>
-                        &copy; 2013 - 2018
+                        &copy; 2013 - 2019
                         <a target="_blank" href="http://davidstutz.de">David Stutz</a> &mdash; <a target="_blank" href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause License</a> &mdash; <a href="https://davidstutz.de/impressum/">Impressum</a> &mdash; <a href="https://davidstutz.de/datenschutz/">Datenschutz</a>
                     </p>
                 </div>

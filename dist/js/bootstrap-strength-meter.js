@@ -2,7 +2,7 @@
  * bootstrap-strength-meter.js
  * https://github.com/davidstutz/bootstrap-strength-meter
  *
- * Copyright 2013 David Stutz
+ * Copyright 2013 - 2019 David Stutz
  */
 !function($) {
     
@@ -17,8 +17,8 @@
                 base: 80,
                 hierarchy: {
                     '0': 'progress-bar-danger',
-                    '25': 'progress-bar-warning',
-                    '50': 'progress-bar-success'
+                    '50': 'progress-bar-warning',
+                    '100': 'progress-bar-success'
                 },
                 passwordScore: {
                     options: [],
@@ -110,11 +110,11 @@
                 container: input.parent(),
                 hierarchy: {
                     '0': ['text-danger', 'ridiculous'],
-                    '10': ['text-danger', 'very weak'],
-                    '20': ['text-warning', 'weak'],
-                    '30': ['text-warning', 'good'],
-                    '40': ['text-success', 'strong'],
-                    '50': ['text-success', 'very strong']
+                    '25': ['text-danger', 'very weak'],
+                    '50': ['text-warning', 'weak'],
+                    '75': ['text-warning', 'good'],
+                    '100': ['text-success', 'strong'],
+                    '125': ['text-success', 'very strong']
                 },
                 passwordScore: {
                     options: [],
@@ -182,11 +182,11 @@
             var defaults = {
                 hierarchy: {
                     '0': 'ridiculous',
-                    '10': 'very weak',
-                    '20': 'weak',
-                    '30': 'good',
-                    '40': 'strong',
-                    '50': 'very strong'
+                    '25': 'very weak',
+                    '50': 'weak',
+                    '75': 'good',
+                    '100': 'strong',
+                    '125': 'very strong'
                 },
                 tooltip: {
                     placement: 'right'
